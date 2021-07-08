@@ -1,0 +1,57 @@
+{
+  "name": "@urbanshona/graphqlsifier",
+  "version": "0.0.1",
+  "author": {
+    "name": "Desmond Rgwaringesu",
+    "email": "desmondrg@gmail.com"
+  },
+  "description": "A Command Line App for adding nestjs graphql decorators and or class validator decorators to TypeORM entities",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "dev": "ts-node  -r tsconfig-paths/register index.ts -s src/server/entities -o src/graphql/entities",
+    "build": "ts-node prebuild.ts && tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./ -o ./dist",
+    "publish:local": "cd ./dist && npm link --force",
+    "publish:global": "yarn run publish:local && cd ./dist && npm publish",
+    "build-n-publish:local": "yarn run build && yarn run publish:local",
+    "build-n-publish:local-n-test": "yarn run build-n-publish:local && yarn run test",
+    "test": "graphqlsifier"
+  },
+  "keywords": [
+    "add decorators",
+    "add nestjs decorators",
+    "add class validator decorators",
+    "add nestjs graphql decorators",
+    "add nestjs graphql decorators to typeorm entities",
+    "add class validator to typeorm entities",
+    "remove decorators from TypeORM Entities"
+  ],
+  "repository": "https://github.com/urbanshona/graphqlsifier.git",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "main": "dist/index.js",
+  "bin": {
+    "graphqlsifier": "./index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "lodash": "^4.17.21",
+    "rimraf": "^3.0.2",
+    "ts-morph": "^11.0.0",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.5",
+    "yargs": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^16.0.0",
+    "@types/rimraf": "^3.0.1",
+    "@types/yargs": "^17.0.2",
+    "nodemon": "^2.0.9",
+    "tscpaths": "^0.0.9"
+  }
+}
