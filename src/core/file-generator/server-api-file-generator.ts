@@ -74,6 +74,7 @@ export class ServerAPIFileGenerator extends FileGenerator
     {
         //add file imports
 
+        // TODO: Add Actual File Imports
         const importDeclaration = destinationFile.addImportDeclaration({
             defaultImport: "MyClass",
             moduleSpecifier: "./file",
@@ -176,6 +177,8 @@ export class ServerAPIFileGenerator extends FileGenerator
                                 options);
                         }else if(propType.isObject()) // Object
                         {
+
+                            // TODO: Add Actual Custom Object Field Type
                             this.addPropertyDecorator(singProperty, propType.isNullable() || options.isEverythingOptional,
                                 null,
                                 null,
@@ -232,6 +235,7 @@ export class ServerAPIFileGenerator extends FileGenerator
                                 true);
                         }else if(propType.isObject()) // Object
                         {
+                            // TODO: Add Actual Custom Object Field Type
                             this.addPropertyDecorator(singProperty, propType.isNullable() || options.isEverythingOptional,
                                 null,
                                 null,
