@@ -75,14 +75,12 @@ export class ServerAPIFileGenerator extends FileGenerator
         //add file imports
 
         // TODO: Add Actual File Imports
-        const importDeclaration = destinationFile.addImportDeclaration({
-            defaultImport: "MyClass",
-            moduleSpecifier: "./file",
-        });
+        const importDeclarationClassValidator = destinationFile.addImportDeclaration({
+            moduleSpecifier: "class-validator"});
 
-        importDeclaration.addNamedImports([{
-            name: 'IsInt'
-        }]);
+        const importDeclarationNestGraphQL = destinationFile.addImportDeclaration({
+            moduleSpecifier: "@nestjs/graphql"});
+
 
         //add class decortor
 
